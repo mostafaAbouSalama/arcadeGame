@@ -54,7 +54,7 @@ var Player = function (x, y) {
 }
 
 Player.prototype.update = function () {
-  // 
+  //
 }
 
 Player.prototype.render = function () {
@@ -65,25 +65,25 @@ Player.prototype.handleInput = function (move) {
   if (modal.style.display !== "block") { // Condition checks when the user has won so it will not move the player position until he/she responds to the modal
     switch (move) {
       case "up":
-            if (this.yPosition === 49) {
+            if (this.yPosition === 49) { //stops the player from moving off canvas
               break;
             }
             this.yPosition -= 83;
             break;
       case "down":
-            if (this.yPosition === 464) {
+            if (this.yPosition === 464) { //stops the player from moving off canvas
               break;
             }
             this.yPosition += 83;
             break;
       case "right":
-            if (this.xPosition === 421){
+            if (this.xPosition === 421){ //stops the player from moving off canvas
               break;
             }
             this.xPosition += 101;
             break;
       case "left":
-            if (this.xPosition === 17) {
+            if (this.xPosition === 17) { //stops the player from moving off canvas
               break;
             }
             this.xPosition -= 101;
@@ -92,7 +92,7 @@ Player.prototype.handleInput = function (move) {
   }
 }
 
-Player.prototype.reset = function (position) {
+Player.prototype.congratulations = function (position) { //runs when the player wins by reaching the water
     if (position === 49) {
         modal.style.display = "block";
     }
@@ -130,7 +130,7 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
-    player.reset(player.yPosition);
+    player.congratulations(player.yPosition);
 });
 
 document.querySelector("#playAgain").addEventListener("click", function() {
