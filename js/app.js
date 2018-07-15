@@ -20,6 +20,7 @@ Enemy.prototype.update = function(dt) {
     // all computers.
     this.xPosition += this.enemySpeed * dt;
 
+    // reset the bug x-coordinate after crossing the full width of the canvas
     if (this.xPosition >= 505) {
       this.xPosition = -99;
       this.enemySpeed = getRandomInteger(75, 400); // Set a new random speed for the bug after it crosses the canvas width
@@ -53,7 +54,7 @@ var Player = function (x, y) {
 }
 
 Player.prototype.update = function () {
-
+  // 
 }
 
 Player.prototype.render = function () {
