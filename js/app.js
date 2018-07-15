@@ -54,7 +54,7 @@ var Player = function (x, y) {
 }
 
 Player.prototype.update = function () {
-  //
+  //All needed functionality that the update method of Player would have done is written across the handleInput method of Player and the collision detection conditional inside the update method of Enemy.
 }
 
 Player.prototype.render = function () {
